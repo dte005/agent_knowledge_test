@@ -1,0 +1,17 @@
+# Arquivos de estado local
+*.tfstate
+*.tfstate.*
+
+# Diretório de providers locais
+.terraform/
+
+# Arquivos de plano local
+*.tfplan
+
+# Arquivos .tfvars que contêm segredos
+*.auto.tfvars
+*.auto.tfvars.json
+secret.tfvars
+
+# Logs de crash
+crash.log
