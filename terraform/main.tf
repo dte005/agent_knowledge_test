@@ -20,5 +20,13 @@ terraform {
 }
 
 provider "aws" {
-  region = "us-east-1"
+  access_key = var.AWS_KEY_ID
+  secret_key = var.AWS_ACCESS_KEY
+  region     = "us-east-1"
+  default_tags {
+    tags = {
+      "owner" : "dte005"
+      "managed-by" : "terraform"
+    }
+  }
 }
