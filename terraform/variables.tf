@@ -23,7 +23,7 @@ variable "AWS_KEY_ID" {
   description = "Access key ID para o provedor AWS."
   sensitive   = true # Boa prática de segurança
 }
-variable "AWS_ACCESS_KEY" {
+variable "AWS_KEY_SECRET" {
   type        = string
   description = "Chave de acesso secreta para o provedor AWS."
   sensitive   = true # Boa prática de segurança
