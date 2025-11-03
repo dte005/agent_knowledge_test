@@ -35,6 +35,7 @@ resource "aws_bedrockagent_knowledge_base" "this" {
       }
     }
   }
+  tags = merge(local.common_tags, {"Location": "aws_bedrockagent_knowledge_base"})
 
   depends_on = [
     aws_opensearchserverless_collection.kb_vector_store

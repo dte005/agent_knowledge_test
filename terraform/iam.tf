@@ -89,3 +89,18 @@ resource "aws_opensearchserverless_access_policy" "opensearch_data_access" {
   ])
   depends_on = [module.lambda]
 }
+
+resource "aws_opensearchserverless_security_policy" "opensearch_encryption_policy" {
+  name   = "${var.knowledge_base_name}-encryption"
+  type   = "encryption"
+  policy = jsonencode({
+    Rules = [
+      {
+        ResourceType = "collection"
+        #aplica encriptação com esse nome
+        Resource = ["collection/${var.knowledge_base_name}"]
+      }
+    ],
+    AWSOwnedKey = true
+  })
+}

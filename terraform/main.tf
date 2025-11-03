@@ -25,8 +25,9 @@ provider "aws" {
   region     = "us-east-1"
   default_tags {
     tags = {
-      "owner" : "dte005"
-      "managed-by" : "terraform"
+      "Owner" : "dte005"
+      "ManagedBy" : "terraform"
+      "Project": "agent_knowledge_test"
     }
   }
 }

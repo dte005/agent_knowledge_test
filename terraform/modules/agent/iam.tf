@@ -16,4 +16,5 @@ resource "aws_iam_role" "bedrock_agent_role" {
       }
     ]
   })
+  tags = merge(local.common_tags, {"Location": "bedrock_agent_role"})
 }
