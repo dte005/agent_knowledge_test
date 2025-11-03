@@ -5,10 +5,6 @@
 module "kb" {
   source  = "./modules/kb"
   kb_name = var.knowledge_base_name
-  depends_on = [
-    aws_iam_policy.lambda_policy,
-    aws_opensearchserverless_security_policy.opensearch_encryption_policy
-  ]
 }
 
 module "lambda" {

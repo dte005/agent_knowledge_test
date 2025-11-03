@@ -16,7 +16,6 @@ resource "aws_iam_policy" "lambda_policy" {
       ]
     }
   )
-  depends_on = [module.kb]
 }
 
 ## JUNÇÃO DE POLÍTICA COM ROLE
@@ -87,7 +86,6 @@ resource "aws_opensearchserverless_access_policy" "opensearch_data_access" {
       Principal = [module.lambda.lambda_iam_role_arn]
     }
   ])
-  depends_on = [module.lambda]
 }
 
 resource "aws_opensearchserverless_security_policy" "opensearch_encryption_policy" {
